@@ -1,105 +1,129 @@
-# Cassette
+<div align="center">
 
-**An offline music player for Android.**
+  <img src=".github/assets/cassette-banner.png" width="100%" alt="Cassette">
 
-Cassette is a local music player built with Kotlin and Jetpack Compose. It is designed around a simple idea: your music library should stay usable without a streaming subscription or an internet connection.
+  **A local music player for Android.**
 
-The current app version in the project is **1.0.1** (version code **3**).
+  [![GitHub stars](https://img.shields.io/github/stars/Aaryan047/Cassette?style=flat-square)](https://github.com/Aaryan047/Cassette/stargazers)
+  [![GitHub forks](https://img.shields.io/github/forks/Aaryan047/Cassette?style=flat-square)](https://github.com/Aaryan047/Cassette/forks)
+  [![Last commit](https://img.shields.io/github/last-commit/Aaryan047/Cassette?style=flat-square)](https://github.com/Aaryan047/Cassette/commits/main)
+
+</div>
+
+---
+
+## About
+
+Cassette is an Android music player built around a simple idea: your music should be easy to access, even when you're offline.
+
+It focuses on music stored locally on your device, with a clean library, folder-based browsing, a dedicated cassette deck, and audio-reactive visualisers.
+
+I started building Cassette because I wanted a local music player that felt considered to use, not just functional. The project has also been a way to explore Android development, audio processing, and interface design.
 
 ## Features
 
-- **Local music library:** choose a music folder on your device and browse its tracks by folder.
-- **Background playback:** playback is handled by Media3, with media-session controls.
-- **Cassette deck:** a dedicated landscape playback screen with transport controls and seeking.
-- **Live audio visualizer:** a 48-band spectrum calculated from decoded PCM audio.
-- **Visualizer styles:** Thick Bars, Fine Bars, Squiggle, Mirror, and Dots.
-- **Themes:** Carbon, Neon, Jade, Violet, and Gold, each with light and dark appearance modes.
-- **Saved preferences:** theme, appearance, visualizer style, repeat, shuffle, and selected music folder settings.
-
-Audio format support depends on the Android device and the codec used by the file. Cassette filters common formats when scanning, but that does not guarantee every file will decode on every phone.
+- **Local music playback** — play audio stored on your device.
+- **Offline listening** — your local music does not need an internet connection.
+- **Music library** — browse and search your music collection.
+- **Folder browsing** — find tracks by their location on your device.
+- **Cassette deck** — a dedicated landscape playback screen.
+- **Audio-reactive visualisers** — visual styles that respond to the music.
+- **Five visualiser styles** — Thick Bars, Fine Bars, Squiggle, Mirror, and Dots.
+- **Five colour themes** — Carbon, Neon, Jade, Violet, and Gold.
+- **Light and dark appearance** — both variants are available for each theme.
+- **Playback controls** — shuffle, repeat, previous, next, and seeking.
 
 ## Screenshots
 
-Add screenshots of the app to the `screenshots/` folder. These filenames are a useful starting point:
+### Music library
 
-- `screenshots/library.png`
-- `screenshots/cassette-deck.png`
-- `screenshots/visualizer.png`
-- `screenshots/themes.png`
+<div align="center">
+  <img src="screenshots/library.jpg" width="32%" alt="Cassette music library">
+</div>
 
-## Tech stack
+### Folder browsing
 
-- Kotlin
-- Jetpack Compose and Material 3
-- Media3 / ExoPlayer and MediaSession
-- AndroidX DocumentFile for folder access
-- Jetpack DataStore for saved preferences
-- Gson for playlist/cache serialization
+<div align="center">
+  <img src="screenshots/folders.jpg" width="32%" alt="Cassette folder browser">
+</div>
 
-## Requirements
+### Settings and themes
 
-- Android Studio with Android SDK Platform 36 installed
-- JDK 21 (the Gradle daemon toolchain is set to Java 21)
-- Android device or emulator running **Android 7.0 (API 24) or newer**
+<div align="center">
+  <img src="screenshots/settings-themes.jpg" width="32%" alt="Cassette settings, themes, and visualiser options">
+</div>
 
-The project uses the Gradle wrapper, so you do not need to install Gradle separately. The wrapper downloads the configured Gradle version on the first build.
+## Themes
 
-## Build
+Cassette currently includes five colour themes:
 
-Clone the repository and open the project folder in Android Studio, or build it from a terminal.
+| Theme | Description |
+|:---|:---|
+| Carbon | Neutral, understated tones |
+| Neon | Contrasting accent colours |
+| Jade | Green-inspired palette |
+| Violet | Purple-inspired palette |
+| Gold | Warm golden tones |
 
-**Windows:**
+Each theme has a light and a dark variant.
 
-```bat
-gradlew.bat test
-gradlew.bat assembleDebug
-```
+## Visualiser styles
 
-**macOS / Linux:**
+The cassette deck includes five visualiser styles:
+
+- **Thick Bars**
+- **Fine Bars**
+- **Squiggle**
+- **Mirror**
+- **Dots**
+
+The visualiser analyses the audio being played and uses it to drive the on-screen animation.
+
+## Built with
+
+- **Kotlin** — programming language
+- **Jetpack Compose** — Android UI
+- **AndroidX Media3 / ExoPlayer** — audio playback
+- **Android audio processing APIs** — audio analysis for the visualiser
+- **Gradle** — build system
+
+## Build from source
+
+### Requirements
+
+- Android Studio
+- Android SDK required by the project
+- A JDK version compatible with the project's Gradle configuration
+
+### Clone the repository
 
 ```bash
-./gradlew test
-./gradlew assembleDebug
+git clone https://github.com/Aaryan047/Cassette.git
 ```
 
-The debug APK is generated at:
+Open the cloned project in Android Studio, allow Gradle to sync, and run the `app` configuration on an Android device or emulator.
 
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
+## Feedback and contributions
 
-To install from Android Studio, select the `app` run configuration and run it on a connected device or emulator.
+Cassette is a personal project, but feedback, bug reports, and contributions are welcome.
 
-## Project structure
+If you run into a problem, open an issue and include your Android version, device model, and steps to reproduce it where possible.
 
-```text
-Cassette/
-├── app/
-│   └── src/
-│       ├── main/
-│       │   ├── java/com/example/cassettev01/
-│       │   │   ├── model/       # Song and playlist models
-│       │   │   ├── player/      # Media3 playback and visualizer processing
-│       │   │   ├── storage/     # Folder scanning, cache, and settings
-│       │   │   ├── ui/          # Compose screens and themes
-│       │   │   └── MainActivity.kt
-│       │   └── res/             # App resources, fonts, and launcher icons
-│       └── test/                # Unit tests
-├── .github/                     # Issue templates
-├── gradle/                      # Wrapper and version catalog
-├── screenshots/
-├── README.md
-└── TESTING.md
-```
+## Roadmap
 
-## Manual testing
+Things I'd like to keep improving:
 
-See [TESTING.md](TESTING.md) for the device checklist covering folder access, playback, seeking, background playback, themes, and visualizer behaviour.
+- Playback reliability and performance.
+- More visualiser refinements.
+- Library and folder-browsing improvements.
+- UI polish and accessibility.
 
-## Releases
+## Acknowledgements
 
-Source code belongs in the repository. When publishing an installable build, attach the APK to the repository's GitHub Releases page instead of committing generated APK files to the source tree.
+Cassette is built with Kotlin, Jetpack Compose, and AndroidX Media3.
+
+Thanks to the Android developer community and the maintainers of the libraries used in this project.
 
 ## License
 
-A license has not been added yet. Until one is chosen and included in this repository, please do not assume the source is available for reuse or redistribution.
+No open-source licence has been added yet. Until a licence is included in the repository, all rights are reserved by the copyright holder. Please do not assume the code is available for reuse or redistribution.
