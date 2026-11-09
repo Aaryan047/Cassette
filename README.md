@@ -22,16 +22,16 @@ I started building Cassette because I wanted a local music player that felt cons
 
 ## Features
 
-- **Local music playback** — play audio stored on your device.
-- **Offline listening** — your local music does not need an internet connection.
-- **Music library** — browse and search your music collection.
-- **Folder browsing** — find tracks by their location on your device.
-- **Cassette deck** — a dedicated landscape playback screen.
-- **Audio-reactive visualisers** — visual styles that respond to the music.
-- **Five visualiser styles** — Thick Bars, Fine Bars, Squiggle, Mirror, and Dots.
-- **Five colour themes** — Carbon, Neon, Jade, Violet, and Gold.
-- **Light and dark appearance** — both variants are available for each theme.
-- **Playback controls** — shuffle, repeat, previous, next, and seeking.
+- **Local music playback** - play audio stored on your device.
+- **Offline listening** - your local music does not need an internet connection.
+- **Music library** - browse and search your music collection.
+- **Folder browsing** - find tracks by their location on your device.
+- **Cassette deck** - a dedicated landscape playback screen.
+- **Audio-reactive visualisers** - visual styles that respond to the music.
+- **Five visualiser styles** - Thick Bars, Fine Bars, Squiggle, Mirror, and Dots.
+- **Five colour themes** - Carbon, Neon, Jade, Violet, and Gold.
+- **Light and dark appearance** - both variants are available for each theme.
+- **Playback controls** - shuffle, repeat, previous, next, and seeking.
 
 ## Screenshots
 
@@ -81,11 +81,27 @@ The visualiser analyses the audio being played and uses it to drive the on-scree
 
 ## Built with
 
-- **Kotlin** — programming language
-- **Jetpack Compose** — Android UI
-- **AndroidX Media3 / ExoPlayer** — audio playback
-- **Android audio processing APIs** — audio analysis for the visualiser
-- **Gradle** — build system
+- **Kotlin** - programming language
+- **Jetpack Compose** - Android UI
+- **AndroidX Media3 / ExoPlayer** - audio playback
+- **Android audio processing APIs** - audio analysis for the visualiser
+- **Gradle** - build system
+
+## Download
+
+Want to try Cassette? Download the Android APK directly:
+
+<div align="center">
+
+  **[Download Cassette for Android](https://github.com/Aaryan047/Cassette/raw/refs/heads/main/cassette.apk)**
+
+  <sub>Download the APK, open it on your Android device, and follow the installation prompt.</sub>
+
+</div>
+
+If Android blocks the installation, allow your browser or file manager to install unknown apps when prompted. Only install APKs you trust.
+
+The download link expects `cassette.apk` to be uploaded to the root of this repository.
 
 ## Build from source
 
