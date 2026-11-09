@@ -1,0 +1,20 @@
+# Android Studio and Gradle
+.gradle/
+.idea/
+.kotlin/
+**/build/
+local.properties
+*.iml
+.DS_Store
+/captures/
+**/.externalNativeBuild/
+**/.cxx/
+
+# Local signing files
+*.jks
+*.keystore
+keystore.properties
+
+# Attach build artifacts to GitHub Releases instead of committing them
+*.apk
+*.aab
